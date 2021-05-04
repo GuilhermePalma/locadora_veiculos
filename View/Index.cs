@@ -96,6 +96,7 @@ namespace locadora_veiculos
             {
                 i = false;
                 panel_conteudo.Controls.Clear();
+                PanelForm<Frm_Locacoes>();
             }
             else
             {
@@ -110,6 +111,7 @@ namespace locadora_veiculos
             {
                 i = false;
                 panel_conteudo.Controls.Clear();
+                PanelForm<Frm_Veiculos>();
             }
             else
             {
@@ -123,6 +125,7 @@ namespace locadora_veiculos
             {
                 i = false;
                 panel_conteudo.Controls.Clear();
+                PanelForm<Frm_Clientes>();
             }
             else
             {
@@ -157,6 +160,7 @@ namespace locadora_veiculos
             {
                 i = false;
                 panel_conteudo.Controls.Clear();
+                PanelForm<Frm_Locacoes>();
             }
             else
             {
@@ -165,6 +169,13 @@ namespace locadora_veiculos
             }
         }
 
-
+        private void Button1_Click_1(object sender, EventArgs e)
+        {
+            if (i)
+            {
+                i = false;
+                panel_conteudo.Controls.Clear();
+            }
+        }
     }
 }

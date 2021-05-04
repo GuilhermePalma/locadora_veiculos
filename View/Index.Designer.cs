@@ -45,6 +45,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.panel_conteudo = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panelCabecalho.SuspendLayout();
             this.panel_lateral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -160,6 +161,7 @@
             // panel_lateral
             // 
             this.panel_lateral.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.panel_lateral.Controls.Add(this.button1);
             this.panel_lateral.Controls.Add(this.label3);
             this.panel_lateral.Controls.Add(this.label2);
             this.panel_lateral.Controls.Add(this.pictureBox2);
@@ -310,6 +312,26 @@
             this.panel_conteudo.TabIndex = 2;
             this.panel_conteudo.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel3_Paint);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Goldenrod;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Bahnschrift", 12.25F);
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(57, 350);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(109, 36);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Limpar Tela";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.Button1_Click_1);
+            // 
             // Index
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -351,6 +373,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox2;
         public System.Windows.Forms.Panel panel_conteudo;
+        private System.Windows.Forms.Button button1;
     }
 }
 
