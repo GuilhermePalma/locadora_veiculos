@@ -1,0 +1,16 @@
+C:\Users\Guilherme\Desktop\Desenvolvimento\Em Processo - C# Aplicativo\locadora_veiculos\locadora_veiculos\bin\Debug\locadora_veiculos.exe.config
+C:\Users\Guilherme\Desktop\Desenvolvimento\Em Processo - C# Aplicativo\locadora_veiculos\locadora_veiculos\bin\Debug\locadora_veiculos.exe
+C:\Users\Guilherme\Desktop\Desenvolvimento\Em Processo - C# Aplicativo\locadora_veiculos\locadora_veiculos\bin\Debug\locadora_veiculos.pdb
+C:\Users\Guilherme\Desktop\Desenvolvimento\Em Processo - C# Aplicativo\locadora_veiculos\locadora_veiculos\obj\Debug\locadora_veiculos.csprojAssemblyReference.cache
+C:\Users\Guilherme\Desktop\Desenvolvimento\Em Processo - C# Aplicativo\locadora_veiculos\locadora_veiculos\obj\Debug\locadora_veiculos.Properties.Resources.resources
+C:\Users\Guilherme\Desktop\Desenvolvimento\Em Processo - C# Aplicativo\locadora_veiculos\locadora_veiculos\obj\Debug\locadora_veiculos.Index.resources
+C:\Users\Guilherme\Desktop\Desenvolvimento\Em Processo - C# Aplicativo\locadora_veiculos\locadora_veiculos\obj\Debug\locadora_veiculos.csproj.GenerateResource.cache
+C:\Users\Guilherme\Desktop\Desenvolvimento\Em Processo - C# Aplicativo\locadora_veiculos\locadora_veiculos\obj\Debug\locadora_veiculos.csproj.CoreCompileInputs.cache
+C:\Users\Guilherme\Desktop\Desenvolvimento\Em Processo - C# Aplicativo\locadora_veiculos\locadora_veiculos\obj\Debug\locadora_veiculos.exe
+C:\Users\Guilherme\Desktop\Desenvolvimento\Em Processo - C# Aplicativo\locadora_veiculos\locadora_veiculos\obj\Debug\locadora_veiculos.pdb
+C:\Users\Guilherme\Desktop\Desenvolvimento\Em Processo - C# Aplicativo\locadora_veiculos\locadora_veiculos\bin\Debug\MySql.Data.dll
+C:\Users\Guilherme\Desktop\Desenvolvimento\Em Processo - C# Aplicativo\locadora_veiculos\locadora_veiculos\obj\Debug\locadora_veiculos.csproj.CopyComplete
+C:\Users\Guilherme\Desktop\Desenvolvimento\Em Processo - C# Aplicativo\locadora_veiculos\locadora_veiculos\obj\Debug\locadora_veiculos.Lists.resources
+C:\Users\Guilherme\Desktop\Desenvolvimento\Em Processo - C# Aplicativo\locadora_veiculos\locadora_veiculos\obj\Debug\locadora_veiculos.Frm_Clientes.resources
+C:\Users\Guilherme\Desktop\Desenvolvimento\Em Processo - C# Aplicativo\locadora_veiculos\locadora_veiculos\obj\Debug\locadora_veiculos.Frm_Veiculos.resources
+C:\Users\Guilherme\Desktop\Desenvolvimento\Em Processo - C# Aplicativo\locadora_veiculos\locadora_veiculos\obj\Debug\locadora_veiculos.View.Frm_Locacoes.resources
