@@ -8,12 +8,12 @@ using locadora_veiculos.Controller;
 
 namespace locadora_veiculos.Model
 {
-    class VeiculosModel
+    class VeiculosDAO
     {
         public string erro;
         public List<Veiculos> veiculosList = new List<Veiculos>();
         public int registrosAfetados;
-        private Connection urlDB = new Connection();
+        private DataBase urlDB = new DataBase();
 
 
         public Boolean SelectVeiculoID(Veiculos veiculo)

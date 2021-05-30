@@ -89,19 +89,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller\Connection.cs" />
+    <Compile Include="Controller\DataBase.cs" />
     <Compile Include="Model\Class\Locacoes.cs" />
-    <Compile Include="Model\ClienteModel.cs" />
-    <Compile Include="Model\LocacoesModel.cs" />
-    <Compile Include="View\Lists.cs">
+    <Compile Include="Model\DAO\ClienteDAO.cs" />
+    <Compile Include="Model\DAO\LocacoesDAO.cs" />
+    <Compile Include="View\Frm_Lists.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Lists.Designer.cs">
-      <DependentUpon>Lists.cs</DependentUpon>
+    <Compile Include="View\Frm_Lists.Designer.cs">
+      <DependentUpon>Frm_Lists.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Class\Clientes.cs" />
     <Compile Include="Model\Class\Veiculos.cs" />
-    <Compile Include="Model\VeiculosModel.cs" />
+    <Compile Include="Model\DAO\VeiculosDAO.cs" />
     <Compile Include="View\Frm_Clientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,8 +128,8 @@
     <Compile Include="View\Index.Designer.cs">
       <DependentUpon>Index.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="View\Lists.resx">
-      <DependentUpon>Lists.cs</DependentUpon>
+    <EmbeddedResource Include="View\Frm_Lists.resx">
+      <DependentUpon>Frm_Lists.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Frm_Clientes.resx">
       <DependentUpon>Frm_Clientes.cs</DependentUpon>

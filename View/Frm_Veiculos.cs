@@ -77,7 +77,7 @@ namespace locadora_veiculos
 
                 Model.Veiculos veiculo = new Model.Veiculos(id, placa, cidade, placa_mercosul, modelo,
                     marca, cor, ano, status);
-                VeiculosModel veiculosModel = new VeiculosModel();
+                VeiculosDAO veiculosModel = new VeiculosDAO();
 
                 if (!veiculosModel.SelectVeiculoID(veiculo))
                 {
@@ -160,7 +160,7 @@ namespace locadora_veiculos
             {
                 Model.Veiculos veiculo = new Model.Veiculos(id, placa, cidade, placa_mercosul, modelo,
                    marca, cor, ano, status);
-                VeiculosModel veiculosModel = new VeiculosModel();
+                VeiculosDAO veiculosModel = new VeiculosDAO();
 
                 if (veiculosModel.SelectVeiculoID(veiculo))
                 {
@@ -217,7 +217,7 @@ namespace locadora_veiculos
                 id = Convert.ToInt32(txt_id.Text);
 
                 Veiculos veiculo = new Veiculos(id,"","",0,"","","",0,"");
-                VeiculosModel veiculosModel = new VeiculosModel();
+                VeiculosDAO veiculosModel = new VeiculosDAO();
 
                 if (!veiculosModel.SelectVeiculoID(veiculo))
                 {
@@ -252,7 +252,7 @@ namespace locadora_veiculos
         private void Btn_listar_Click(object sender, EventArgs e)
         {
             //Metodo de Listar Veiculos no Form List
-            Lists listVeiculos = new Lists();
+            Frm_Lists listVeiculos = new Frm_Lists();
             listVeiculos.ListVeiculos();
             listVeiculos.ShowDialog();
         }

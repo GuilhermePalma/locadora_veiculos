@@ -19,9 +19,61 @@ namespace locadora_veiculos
         }
 
 
-        private int id=-1, numeroTelefone=-1, numeroEndereco=-1;
+        private ulong numeroTelefone;
+        private uint id, numeroEndereco;
         private string cpf = "", nome = "", cnh = "", email = "", logradouro = "", complemento = "";
+        private bool integerTrue = false;
 
+        //Recupera as Infromações dos Inputs, Valida se foram preenchidos corretamente
+        private Boolean RecoveryValues()
+        {
+            cpf = txt_cpf.Text;
+            nome = txt_nome.Text;
+            cnh = txt_cnh.Text;
+            email = txt_email.Text;
+            logradouro = txt_endereco.Text;
+            complemento = txt_complemento.Text;
+
+            try
+            {
+                id = uint.Parse(txt_id.Text);
+                numeroTelefone = ulong.Parse(txt_telefone.Text);
+                numeroEndereco = uint.Parse(txt_numero.Text);
+                integerTrue = true;
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Insira somente valores Inteiros Positivos nos campos 'Id', 'Telefone' e 'Numero'");
+                return false;
+            }
+
+
+            if (cpf != "" && nome != ""
+               && cnh != "" && email != ""
+               && logradouro != ""
+               && integerTrue != false)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        //Limpa os Inputs do Formulario
+        private void ClearInputs()
+        {
+            txt_id.Text = "";
+            txt_cpf.Text = "";
+            txt_nome.Text = "";
+            txt_cnh.Text = "";
+            txt_telefone.Text = "";
+            txt_email.Text = "";
+            txt_endereco.Text = "";
+            txt_numero.Text = "";
+            txt_complemento.Text = "";
+        }
        
 
         private void Label2_Click(object sender, EventArgs e)
@@ -39,53 +91,39 @@ namespace locadora_veiculos
 
         }
 
+        //Metodo de Listar Clientes no Form List
         private void Btn_listar_Click(object sender, EventArgs e)
         {
-            //Metodo de Listar Veiculos no Form List
-            Lists listClientes = new Lists();
+            ClearInputs();
+            //Instancia o Formulario
+            Frm_Lists listClientes = new Frm_Lists();
+            //Chama o Metodo ListClientes() do Frm_Clientes
             listClientes.ListClientes();
+            //Mostra o Forms na tela
             listClientes.ShowDialog();
         }
 
 
+        //Cadastra Clientes
         private void Btn_cadastro_Click(object sender, EventArgs e)
         {
-            cpf = txt_cpf.Text;
-            nome = txt_nome.Text;
-            cnh = txt_cnh.Text;
-            email = txt_email.Text;
-            logradouro = txt_endereco.Text;
-            complemento = txt_complemento.Text;
-
-            try
+            //Valida os Valores dos Inputs
+            if (RecoveryValues() == true)
             {
-                id = Convert.ToInt32(txt_id.Text);
-                numeroTelefone = Convert.ToInt32(txt_telefone.Text);
-                numeroEndereco = Convert.ToInt32(txt_endereco.Text);
-            }
-            catch
-            {
-                MessageBox.Show("O Campo 'ID' ou 'Ano' ou 'N° Endereço' não Foi Preenchido");
-            }
+                Clientes cliente = new Clientes(id, cpf, nome, cnh, numeroTelefone, email, 
+                    logradouro, numeroEndereco, complemento);
 
+                ClienteDAO clienteDAO = new ClienteDAO();
 
-            if (cpf != "" && nome != "" && cnh != "" && email != "" && logradouro != ""
-                && id != -1 && numeroTelefone != -1 && numeroEndereco != -1)
-            {
-                Clientes cliente = new Clientes(id, cpf, nome, cnh, numeroTelefone, email, logradouro, numeroEndereco, complemento);
-                ClienteModel clienteModel = new ClienteModel();
-
-                if (clienteModel.SelectClientesID(cliente))
+                //Verifica se já existe o Cliente
+                if (clienteDAO.SelectClientesID(cliente))
                 {
-                    MessageBox.Show("Já existe um Cliente com esse ID!!!\n\nErro:\n" + clienteModel.erro);
+                    MessageBox.Show("Já existe um Cliente com esse ID!!!\n\nErro:\n" + clienteDAO.erro);
                 }
                 else
                 {
-                    if (!clienteModel.InsertClientes(cliente))
-                    {
-                        MessageBox.Show("Não foi possivel Cadastrar o Cliente!!!\n\nErro:\n" + clienteModel.erro);
-                    }
-                    else
+                    //Tenta fazer o Insert no Banco de Dados
+                    if (clienteDAO.InsertClientes(cliente))
                     {
                         MessageBox.Show("Dados Cadastrados Com Sucesso!!!"
                             + "\nID_Cliente: " + cliente.Id
@@ -98,17 +136,12 @@ namespace locadora_veiculos
                             + "\nN°: " + cliente.NumeroTelefone
                             + "\nComplemento: " + cliente.Complemento);
 
-                        txt_id.Text = "";
-                        txt_cpf.Text = "";
-                        txt_nome.Text = "";
-                        txt_cnh.Text = "";
-                        txt_telefone.Text = "";
-                        txt_email.Text = "";
-                        txt_endereco.Text = "";
-                        txt_numero.Text = "";
-                        txt_complemento.Text = "";
+                        ClearInputs();
                     }
-
+                    else
+                    {
+                        MessageBox.Show("Não foi possivel Cadastrar o Cliente!!!\n\nErro:\n" + clienteDAO.erro);
+                    }
                 }
             }
             else
@@ -117,44 +150,21 @@ namespace locadora_veiculos
             }
         }
 
-
+        //Altera Clientes
         private void Btn_alterar_Click(object sender, EventArgs e)
         {
-            cpf = txt_cpf.Text;
-            nome = txt_nome.Text;
-            cnh = txt_cnh.Text;
-            email = txt_email.Text;
-            logradouro = txt_endereco.Text;
-            complemento = txt_complemento.Text;
-
-            try
+            //Valida os Valores dos Inputs
+            if (RecoveryValues() == true)
             {
-                id = Convert.ToInt32(txt_id.Text);
-                numeroTelefone = Convert.ToInt32(txt_telefone.Text);
-                numeroEndereco = Convert.ToInt32(txt_endereco.Text);
-            }
-            catch
-            {
-                MessageBox.Show("O Campo 'ID' ou 'Ano' ou 'N° Endereço' não Foi Preenchido");
-            }
+                Clientes cliente = new Clientes(id, cpf, nome, cnh, numeroTelefone, email,
+                    logradouro, numeroEndereco, complemento);
+                ClienteDAO clienteDAO = new ClienteDAO();
 
-            if (cpf != "" && nome != "" && cnh != "" && email != "" && logradouro != "" &&
-                id != -1 && numeroTelefone != -1 && numeroEndereco != -1)
-            {
-                Clientes cliente = new Clientes(id, cpf, nome, cnh, numeroTelefone, email, logradouro, numeroEndereco, complemento);
-                ClienteModel clienteModel = new ClienteModel();
-
-                if (!clienteModel.SelectClientesID(cliente))
+                //Verifica se existe um Cliente com aquela ID
+                if (clienteDAO.SelectClientesID(cliente))
                 {
-                    MessageBox.Show("Não foi possivel Localizar o ID do Cliente!!!\n\nErro:\n" + clienteModel.erro);
-                }
-                else
-                {
-                    if (!clienteModel.UpdateCliente(cliente))
-                    {
-                        MessageBox.Show("Não foi possivel Atualizar o Cliente!!!\n\nErro:\n" + clienteModel.erro);
-                    }
-                    else
+                    //Tenta atualizar o Cliente
+                    if (clienteDAO.UpdateCliente(cliente))
                     {
                         MessageBox.Show("Dados Atualizados Com Sucesso !!!"
                             + "ID_Cliente: " + cliente.Id
@@ -167,73 +177,60 @@ namespace locadora_veiculos
                             + "\nN°: " + cliente.NumeroTelefone
                             + "\nComplemento: " + cliente.Complemento);
 
-                        txt_id.Text = "";
-                        txt_cpf.Text = "";
-                        txt_nome.Text = "";
-                        txt_cnh.Text = "";
-                        txt_telefone.Text = "";
-                        txt_email.Text = "";
-                        txt_endereco.Text = "";
-                        txt_numero.Text = "";
-                        txt_complemento.Text = "";
+                        ClearInputs();
                     }
+                    else
+                    {
+                        MessageBox.Show("Não foi possivel Atualizar o Cliente!!!\n\nErro:\n" + clienteDAO.erro);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Não foi possivel Localizar o ID do Cliente!!!\n\nErro:\n" + clienteDAO.erro);
                 }
             }
             else
             {
                 MessageBox.Show("Insira Os dados Corretamente!!!");
             }
-
+            
         }
 
 
         private void Btn_excluir_Click(object sender, EventArgs e)
         {
-            txt_cpf.Text = "";
-            txt_nome.Text = "";
-            txt_cnh.Text = "";
-            txt_telefone.Text = "";
-            txt_email.Text = "";
-            txt_endereco.Text = "";
-            txt_numero.Text = "";
-            txt_complemento.Text = "";
-
             try
             {
-                id = Convert.ToInt32(txt_id.Text);
+                //Tenta recuperar se foi inserido um valor no Input ID
+                id = uint.Parse(txt_id.Text);
 
-                Clientes cliente = new Clientes(id, "","","",0,"","",0,"");
-                ClienteModel clienteModel = new ClienteModel();
+                Clientes cliente = new Clientes(id, "", "", "", 0, "", "", 0, "");
+                ClienteDAO clienteDAO = new ClienteDAO();
 
-                if (!clienteModel.SelectClientesID(cliente))
+                //Verifica se existe um cliente com aquele ID
+                if (clienteDAO.SelectClientesID(cliente))
                 {
-                    MessageBox.Show("Não foi possivel Localizar o ID do Cliente!!!\n\nErro:\n" + clienteModel.erro);
-                }
-                else
-                {
-                    if (!clienteModel.DeleteVeiculo(cliente))
+                    //Tenta exlcluir o Cliente
+                    if (clienteDAO.DeleteCliente(cliente))
                     {
-                        MessageBox.Show("Não foi possivel Excluir o Cliente!!!\n\nErro:\n" + clienteModel.erro);
+                        MessageBox.Show("Dados Excluidos Com Sucesso !!!\n ID_Cliente: " + cliente.Id);
+                        ClearInputs();
                     }
                     else
                     {
-                        MessageBox.Show("Dados Excluidos Com Sucesso !!!\n ID_Cliente: " + cliente.Id);
-
-                        txt_cpf.Text = "";
-                        txt_nome.Text = "";
-                        txt_cnh.Text = "";
-                        txt_telefone.Text = "";
-                        txt_email.Text = "";
-                        txt_endereco.Text = "";
-                        txt_numero.Text = "";
-                        txt_complemento.Text = "";
+                        MessageBox.Show("Não foi possivel Excluir o Cliente!!!\n\nErro:\n" + clienteDAO.erro);
                     }
+                }
+                else
+                {
+                    MessageBox.Show("Não foi possivel Localizar o ID do Cliente!!!\n\nErro:\n" + clienteDAO.erro);
                 }
             }
             catch
             {
-                MessageBox.Show("O Campo 'ID' não Foi Preenchido");
+                MessageBox.Show("Insira valores Inteiros Positivos nos campo 'Id'");
             }
+
         }
 
 

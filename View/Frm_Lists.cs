@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace locadora_veiculos
 {
-    public partial class Lists : Form
+    public partial class Frm_Lists : Form
     {
-        public Lists()
+        public Frm_Lists()
         {
             InitializeComponent();
         }
@@ -25,7 +25,7 @@ namespace locadora_veiculos
 
         private void BtnFechar_Click(object sender, EventArgs e)
         {
-            this.Close();
+
         }
 
         private void Dgv_veiculos_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -35,7 +35,7 @@ namespace locadora_veiculos
 
         public void ListVeiculos()
         {
-            VeiculosModel listVeiculos = new VeiculosModel();
+            VeiculosDAO listVeiculos = new VeiculosDAO();
 
             dgv_list.DataSource = null; //Limpa o DataGridView
             lbl_op.Text = "Operações Veiculos";
@@ -75,18 +75,18 @@ namespace locadora_veiculos
 
         public void ListClientes()
         {
-            ClienteModel listVeiculos = new ClienteModel();
+            ClienteDAO listClientes = new ClienteDAO();
 
             dgv_list.DataSource = null; //Limpa o DataGridView
             lbl_op.Text = "Operações Clientes";
 
-            if (!listVeiculos.ListVeiculos())
+            if (!listClientes.ListClientes())
             {
-                MessageBox.Show("Não foi possivel Listar os Clientes!!!\n\nErro:\n" + listVeiculos.erro);
+                MessageBox.Show("Não foi possivel Listar os Clientes!!!\n\nErro:\n" + listClientes.erro);
             }
             else
             {
-                dgv_list.DataSource = listVeiculos.clientesList;
+                dgv_list.DataSource = listClientes.clientesList;
 
                 dgv_list.Columns["Id"].HeaderText = "ID";
                 dgv_list.Columns["Nome"].HeaderText = "Nome";
@@ -114,7 +114,7 @@ namespace locadora_veiculos
 
         public void ListLocacoes()
         {
-            LocacoesModel listVeiculos = new LocacoesModel();
+            LocacoesDAO listVeiculos = new LocacoesDAO();
 
             dgv_list.DataSource = null; //Limpa o DataGridView
             lbl_op.Text = "Operações Locações";

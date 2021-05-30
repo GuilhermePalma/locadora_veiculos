@@ -9,14 +9,14 @@ using System.Threading.Tasks;
 
 namespace locadora_veiculos.Model
 {
-    class LocacoesModel
+    class LocacoesDAO
     {
         public string erro;
         public List<Locacoes> locacoesList = new List<Locacoes>();
         public int registrosAfetados;
         public double valor_locacaoDB;
         public DateTime dt_retiradaDB, dt_entregaDB;
-        private Connection urlDB = new Connection();
+        private DataBase urlDB = new DataBase();
 
 
         public Boolean SelectLocacoesCpf(Locacoes locacoes)

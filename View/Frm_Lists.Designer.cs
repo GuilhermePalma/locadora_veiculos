@@ -1,6 +1,6 @@
 ﻿namespace locadora_veiculos
 {
-    partial class Lists
+    partial class Frm_Lists
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Lists));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Lists));
             this.dgv_list = new System.Windows.Forms.DataGridView();
             this.panelCabecalho = new System.Windows.Forms.Panel();
             this.btnFechar = new System.Windows.Forms.Button();
@@ -93,7 +93,7 @@
             this.lbl_op.Size = new System.Drawing.Size(0, 30);
             this.lbl_op.TabIndex = 0;
             // 
-            // Lists
+            // Frm_Lists
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -101,9 +101,9 @@
             this.Controls.Add(this.panelCabecalho);
             this.Controls.Add(this.dgv_list);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Lists";
+            this.Name = "Frm_Lists";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Lists";
+            this.Text = "Frm_Lists";
             this.Load += new System.EventHandler(this.Lists_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_list)).EndInit();
             this.panelCabecalho.ResumeLayout(false);

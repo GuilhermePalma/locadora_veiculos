@@ -61,7 +61,7 @@ namespace locadora_veiculos.View
                 && valor_locacao != -1)
             {
                 Locacoes locacoes = new Locacoes(id_locacao, cpf, placa, valor_locacao, data_retirada, data_entrega);
-                LocacoesModel locacoesModel = new LocacoesModel();
+                LocacoesDAO locacoesModel = new LocacoesDAO();
 
                 if (!locacoesModel.SelectLocacoesCpf(locacoes))
                 {
@@ -140,7 +140,7 @@ namespace locadora_veiculos.View
         private void Btn_listar_Click(object sender, EventArgs e)
         {
             //Metodo de Listar Veiculos no Form List
-            Lists listLocacoes = new Lists();
+            Frm_Lists listLocacoes = new Frm_Lists();
             listLocacoes.ListLocacoes();
             listLocacoes.ShowDialog();
         }
@@ -169,7 +169,7 @@ namespace locadora_veiculos.View
                 && valor_locacao != -1)
             { 
                 Locacoes locacoes = new Locacoes(id_locacao, cpf, placa, valor_locacao, data_retirada, data_entrega);
-                LocacoesModel locacoesModel = new LocacoesModel();
+                LocacoesDAO locacoesModel = new LocacoesDAO();
 
                 if (locacoesModel.SelectLocacoesCpf(locacoes))
                 {
@@ -240,7 +240,7 @@ namespace locadora_veiculos.View
                 && valor_locacao != -1)
             {
                 Locacoes locacoes = new Locacoes(id_locacao, cpf, placa, valor_locacao, data_retirada, data_entrega);
-                LocacoesModel locacoesModel = new LocacoesModel();
+                LocacoesDAO locacoesModel = new LocacoesDAO();
 
                 if (locacoesModel.SelectLocacoesCpf(locacoes))
                 {

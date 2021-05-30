@@ -8,27 +8,33 @@ namespace locadora_veiculos.Model
 {
     class Clientes
     {
-        private int id;
+        //Permite somente numeros Positivos e Inteiros 32Bits
+        private uint id;
         private string cpf;
         private string nome;
         private string cnh;
-        private int numeroTelefone;
+        //Permite somente numeros Positivos e Inteiros 64Bits
+        private ulong numeroTelefone;
         private string email;
         private string logradouro;
-        private int numeroEndereco;
+        //Permite somente numeros Positivos e Inteiros 64Bits
+        private uint numeroEndereco;
         private string complemento;
 
-        public int Id { get => id; set => id = value; }
+        //Getters e Setters Usados para Inserir e Recuperar Valores
+        public uint Id { get => id; set => id = value; }
         public string Cpf { get => cpf; set => cpf = value; }
         public string Nome { get => nome; set => nome = value; }
         public string Cnh { get => cnh; set => cnh = value; }
-        public int NumeroTelefone { get => numeroTelefone; set => numeroTelefone = value; }
+        public ulong NumeroTelefone { get => numeroTelefone; set => numeroTelefone = value; }
         public string Email { get => email; set => email = value; }
         public string Logradouro { get => logradouro; set => logradouro = value; }
-        public int NumeroEndereco { get => numeroEndereco; set => numeroEndereco = value; }
+        public uint NumeroEndereco { get => numeroEndereco; set => numeroEndereco = value; }
         public string Complemento { get => complemento; set => complemento = value; }
 
-        public Clientes(int id, string cpf, string nome, string cnh, int numeroTelefone, string email, string logradouro, int numeroEndereco, string complemento)
+        //Metodo que instancia os objetos da Classe
+        public Clientes(uint id, string cpf, string nome, string cnh, ulong numeroTelefone,
+            string email, string logradouro, uint numeroEndereco, string complemento)
         {
             Id = id;
             Cpf = cpf;
@@ -41,6 +47,7 @@ namespace locadora_veiculos.Model
             Complemento = complemento;
         }
 
+        //Metodo Vazio usado para acessar objetos dentro da Classe
         public Clientes() { }
     }
 }

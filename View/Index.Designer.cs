@@ -36,16 +36,16 @@
             this.btnFechar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel_lateral = new System.Windows.Forms.Panel();
+            this.btn_clearWindow = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_opClientes = new System.Windows.Forms.Button();
             this.btn_opVeiculos = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_alugar = new System.Windows.Forms.Button();
+            this.btn_devolver = new System.Windows.Forms.Button();
             this.panel_conteudo = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.panelCabecalho.SuspendLayout();
             this.panel_lateral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -161,15 +161,15 @@
             // panel_lateral
             // 
             this.panel_lateral.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.panel_lateral.Controls.Add(this.button1);
+            this.panel_lateral.Controls.Add(this.btn_clearWindow);
             this.panel_lateral.Controls.Add(this.label3);
             this.panel_lateral.Controls.Add(this.label2);
             this.panel_lateral.Controls.Add(this.pictureBox2);
             this.panel_lateral.Controls.Add(this.pictureBox1);
             this.panel_lateral.Controls.Add(this.btn_opClientes);
             this.panel_lateral.Controls.Add(this.btn_opVeiculos);
-            this.panel_lateral.Controls.Add(this.button5);
-            this.panel_lateral.Controls.Add(this.button2);
+            this.panel_lateral.Controls.Add(this.btn_alugar);
+            this.panel_lateral.Controls.Add(this.btn_devolver);
             this.panel_lateral.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel_lateral.Location = new System.Drawing.Point(0, 52);
             this.panel_lateral.Margin = new System.Windows.Forms.Padding(2);
@@ -177,6 +177,26 @@
             this.panel_lateral.Size = new System.Drawing.Size(167, 388);
             this.panel_lateral.TabIndex = 1;
             this.panel_lateral.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelConteudo_Paint);
+            // 
+            // btn_clearWindow
+            // 
+            this.btn_clearWindow.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btn_clearWindow.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
+            this.btn_clearWindow.FlatAppearance.BorderSize = 0;
+            this.btn_clearWindow.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btn_clearWindow.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Goldenrod;
+            this.btn_clearWindow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_clearWindow.Font = new System.Drawing.Font("Bahnschrift", 12.25F);
+            this.btn_clearWindow.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_clearWindow.Location = new System.Drawing.Point(57, 350);
+            this.btn_clearWindow.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_clearWindow.Name = "btn_clearWindow";
+            this.btn_clearWindow.Size = new System.Drawing.Size(109, 36);
+            this.btn_clearWindow.TabIndex = 11;
+            this.btn_clearWindow.Text = "Limpar Tela";
+            this.btn_clearWindow.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_clearWindow.UseVisualStyleBackColor = false;
+            this.btn_clearWindow.Click += new System.EventHandler(this.Button1_Click_1);
             // 
             // label3
             // 
@@ -260,47 +280,47 @@
             this.btn_opVeiculos.UseVisualStyleBackColor = false;
             this.btn_opVeiculos.Click += new System.EventHandler(this.Btn_opVeiculos_Click);
             // 
-            // button5
+            // btn_alugar
             // 
-            this.button5.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Goldenrod;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Bahnschrift", 12.25F);
-            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(36, 97);
-            this.button5.Margin = new System.Windows.Forms.Padding(2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(128, 36);
-            this.button5.TabIndex = 2;
-            this.button5.Text = "Alugar";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.Button5_Click);
+            this.btn_alugar.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btn_alugar.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
+            this.btn_alugar.FlatAppearance.BorderSize = 0;
+            this.btn_alugar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btn_alugar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Goldenrod;
+            this.btn_alugar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_alugar.Font = new System.Drawing.Font("Bahnschrift", 12.25F);
+            this.btn_alugar.Image = ((System.Drawing.Image)(resources.GetObject("btn_alugar.Image")));
+            this.btn_alugar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_alugar.Location = new System.Drawing.Point(36, 97);
+            this.btn_alugar.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_alugar.Name = "btn_alugar";
+            this.btn_alugar.Size = new System.Drawing.Size(128, 36);
+            this.btn_alugar.TabIndex = 2;
+            this.btn_alugar.Text = "Alugar";
+            this.btn_alugar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_alugar.UseVisualStyleBackColor = false;
+            this.btn_alugar.Click += new System.EventHandler(this.Button5_Click);
             // 
-            // button2
+            // btn_devolver
             // 
-            this.button2.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Goldenrod;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Bahnschrift", 12.25F);
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(36, 137);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(129, 36);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Devolver";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.Button2_Click_1);
+            this.btn_devolver.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btn_devolver.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
+            this.btn_devolver.FlatAppearance.BorderSize = 0;
+            this.btn_devolver.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btn_devolver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Goldenrod;
+            this.btn_devolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_devolver.Font = new System.Drawing.Font("Bahnschrift", 12.25F);
+            this.btn_devolver.Image = ((System.Drawing.Image)(resources.GetObject("btn_devolver.Image")));
+            this.btn_devolver.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_devolver.Location = new System.Drawing.Point(36, 137);
+            this.btn_devolver.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_devolver.Name = "btn_devolver";
+            this.btn_devolver.Size = new System.Drawing.Size(129, 36);
+            this.btn_devolver.TabIndex = 1;
+            this.btn_devolver.Text = "Devolver";
+            this.btn_devolver.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_devolver.UseVisualStyleBackColor = false;
+            this.btn_devolver.Click += new System.EventHandler(this.Button2_Click_1);
             // 
             // panel_conteudo
             // 
@@ -311,26 +331,6 @@
             this.panel_conteudo.Size = new System.Drawing.Size(503, 388);
             this.panel_conteudo.TabIndex = 2;
             this.panel_conteudo.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel3_Paint);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Goldenrod;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Bahnschrift", 12.25F);
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(57, 350);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(109, 36);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Limpar Tela";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.Button1_Click_1);
             // 
             // Index
             // 
@@ -362,8 +362,8 @@
         private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel_lateral;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btn_devolver;
+        private System.Windows.Forms.Button btn_alugar;
         private System.Windows.Forms.Button btn_opClientes;
         private System.Windows.Forms.Button btn_opVeiculos;
         private System.Windows.Forms.Button btnRestourer;
@@ -373,7 +373,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox2;
         public System.Windows.Forms.Panel panel_conteudo;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_clearWindow;
     }
 }
 

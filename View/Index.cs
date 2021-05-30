@@ -16,7 +16,7 @@ namespace locadora_veiculos
     {
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
-        private bool i = false;
+        private bool formActive = false;
 
         [DllImport("user32.dll")]
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
@@ -27,26 +27,24 @@ namespace locadora_veiculos
             InitializeComponent();
         }
 
+        /* Metodo Responsavel por Mostrar Forms na Tela Principal
+         * Herda caracteristicas da classe Forms  */
         public void PanelForm<Forms1>() where Forms1 : Form, new()
         {
-            Form formulario;
-            formulario = panel_lateral.Controls.OfType<Forms1>().FirstOrDefault();
+            //Instancia da Classe Form
+            Form formulario = new Forms1();
 
-            if (formulario == null)
-            {
-                formulario = new Forms1();
-                formulario.TopLevel = false;
-                formulario.FormBorderStyle = FormBorderStyle.None;
-                formulario.Dock = DockStyle.Fill;
-                panel_conteudo.Controls.Add(formulario);
-                panel_conteudo.Tag = formulario;
-                formulario.Show();
-                formulario.BringToFront();
-            }
-            else
-            {
-                formulario.BringToFront();
-            }
+            formulario.TopLevel = false;
+            //Retira as boras
+            formulario.FormBorderStyle = FormBorderStyle.None;
+            formulario.Dock = DockStyle.Fill;
+            //Adiciona ele no Painel Central da Tela
+            panel_conteudo.Controls.Add(formulario);
+            panel_conteudo.Tag = formulario;
+            //Exibe na Tela
+            formulario.Show();
+            //Deixa na Frente/Destaque em relação à Tela Principal
+            formulario.BringToFront();
         }
 
 
@@ -92,44 +90,44 @@ namespace locadora_veiculos
 
         private void Button2_Click_1(object sender, EventArgs e)
         {
-            if (i)
+            if (formActive)
             {
-                i = false;
+                formActive = false;
                 panel_conteudo.Controls.Clear();
                 PanelForm<Frm_Locacoes>();
             }
             else
             {
-                i = true;
+                formActive = true;
                 PanelForm<Frm_Locacoes>();
             }
         }
 
         private void Btn_opVeiculos_Click(object sender, EventArgs e)
         {
-            if (i)
+            if (formActive)
             {
-                i = false;
+                formActive = false;
                 panel_conteudo.Controls.Clear();
                 PanelForm<Frm_Veiculos>();
             }
             else
             {
-                i = true;
+                formActive = true;
                 PanelForm<Frm_Veiculos>();
             }
         }
         private void Btn_opClientes_Click(object sender, EventArgs e)
         {
-            if (i)
+            if (formActive)
             {
-                i = false;
+                formActive = false;
                 panel_conteudo.Controls.Clear();
                 PanelForm<Frm_Clientes>();
             }
             else
             {
-                i = true;
+                formActive = true;
                 PanelForm<Frm_Clientes>();
             }
         }
@@ -156,26 +154,24 @@ namespace locadora_veiculos
         }
         private void Button5_Click(object sender, EventArgs e)
         {
-            if (i)
+            if (formActive)
             {
-                i = false;
+                formActive = false;
                 panel_conteudo.Controls.Clear();
                 PanelForm<Frm_Locacoes>();
             }
             else
             {
-                i = true;
+                formActive = true;
                 PanelForm<Frm_Locacoes>();
             }
         }
 
         private void Button1_Click_1(object sender, EventArgs e)
         {
-            if (i)
-            {
-                i = false;
-                panel_conteudo.Controls.Clear();
-            }
+            formActive = false;
+            panel_conteudo.Controls.Clear();  
         }
+
     }
 }
